@@ -66,3 +66,18 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %{_libdir}/pkgconfig/oauth.pc
 %{_mandir}/man3/oauth.*
 
+
+
+%changelog
+* Thu Jul 05 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.9.7-1
++ Revision: 808176
+- version update 0.9.7
+
+* Wed Dec 14 2011 Alexander Khrukin <akhrukin@mandriva.org> 0.9.6-1
++ Revision: 741059
+- imported package liboauth
+
+* Sat Nov 19 2011 Matthew Dawkins <mattydaw@mandriva.org> 0.9.4-1
++ Revision: 731759
+- imported package liboauth
+
