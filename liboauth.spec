@@ -4,15 +4,23 @@
 
 Summary:        OAuth library functions
 Name:           liboauth
-Version:        0.9.7
+Version:        1.0.0
 Release:        1
 Group:          System/Libraries
 License:        MIT
 URL:            http://liboauth.sourceforge.net/
 Source0:        http://liboauth.sourceforge.net/pool/liboauth-%{version}.tar.gz
+Patch0:		liboauth-automake-1.13.patch
 
 BuildRequires:  pkgconfig(libcurl)
 BuildRequires:  pkgconfig(nss)
+
+%track
+prog %name = {
+	url = http://liboauth.sourceforge.net/
+	version = %version
+	regex = %name-(__VER__)\.tar\.gz
+}
 
 %description
 liboauth is a collection of POSIX-c functions implementing the OAuth
@@ -44,6 +52,7 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 autoreconf -fi
