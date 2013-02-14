@@ -1,14 +1,14 @@
 %define major 0
 %define libname %mklibname oauth %{major}
-%define develname %mklibname -d oauth
+%define devname %mklibname -d oauth
 
 Summary:        OAuth library functions
 Name:           liboauth
 Version:        1.0.0
-Release:        1
+Release:        2
 Group:          System/Libraries
 License:        MIT
-URL:            http://liboauth.sourceforge.net/
+Url:            http://liboauth.sourceforge.net/
 Source0:        http://liboauth.sourceforge.net/pool/liboauth-%{version}.tar.gz
 Patch0:		liboauth-automake-1.13.patch
 
@@ -40,13 +40,13 @@ encode parameters according to OAuth specification and offers
 high-level functionality to sign requests or verify OAuth signatures
 as well as perform HTTP requests.
 
-%package        -n %{develname}
+%package        -n %{devname}
 Summary:        Development files for %{name}
 Group:          Development/C
 Requires:       %{libname} = %{version}-%{release}
 Provides:       %{name}-devel  = %{version}-%{release}
 
-%description    -n %{develname}
+%description    -n %{devname}
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
@@ -64,29 +64,13 @@ autoreconf -fi
 
 %install
 %makeinstall_std
-find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
 %files -n %{libname}
 %{_libdir}/liboauth.so.%{major}*
 
-%files -n %{develname}
+%files -n %{devname}
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/oauth.pc
 %{_mandir}/man3/oauth.*
-
-
-
-%changelog
-* Thu Jul 05 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.9.7-1
-+ Revision: 808176
-- version update 0.9.7
-
-* Wed Dec 14 2011 Alexander Khrukin <akhrukin@mandriva.org> 0.9.6-1
-+ Revision: 741059
-- imported package liboauth
-
-* Sat Nov 19 2011 Matthew Dawkins <mattydaw@mandriva.org> 0.9.4-1
-+ Revision: 731759
-- imported package liboauth
 
