@@ -15,13 +15,6 @@ Patch0:		liboauth-automake-1.13.patch
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(nss)
 
-%track
-prog %{name} = {
-	url = http://liboauth.sourceforge.net/
-	version = %{version}
-	regex = %{name}-(__VER__)\.tar\.gz
-}
-
 %description
 liboauth is a collection of POSIX-c functions implementing the OAuth
 Core RFC 5849 standard. liboauth provides functions to escape and
