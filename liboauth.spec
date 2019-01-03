@@ -11,7 +11,6 @@ License:	MIT
 Url:		http://liboauth.sourceforge.net/
 Source0:	http://liboauth.sourceforge.net/pool/liboauth-%{version}.tar.gz
 Patch0:		liboauth-automake-1.13.patch
-
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(nss)
 
@@ -44,19 +43,18 @@ The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 autoreconf -fi
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
 	--enable-nss
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/liboauth.so.%{major}*
