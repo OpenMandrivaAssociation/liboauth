@@ -5,7 +5,7 @@
 Summary:	OAuth library functions
 Name:		liboauth
 Version:	1.0.3
-Release:	11
+Release:	12
 Group:		System/Libraries
 License:	MIT
 Url:		http://liboauth.sourceforge.net/
