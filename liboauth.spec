@@ -8,7 +8,7 @@ Version:	1.0.3
 Release:	12
 Group:		System/Libraries
 License:	MIT
-Url:		http://liboauth.sourceforge.net/
+Url:		https://liboauth.sourceforge.net/
 Source0:	http://liboauth.sourceforge.net/pool/liboauth-%{version}.tar.gz
 Patch0:		liboauth-automake-1.13.patch
 BuildRequires:	pkgconfig(libcurl)
